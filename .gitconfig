@@ -1,0 +1,59 @@
+[user]
+  name = Gerardo Munguia
+  email = gerardomunguiahoyo@gmail.com
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = nvim
+  pager = delta
+
+[init]
+  defaultBranch = main
+
+[push]
+  default = simple
+
+[alias]
+  vimdiff = mergetool -t vimdiff
+  co = checkout
+  cp = cherry-pick
+  fa = ! git fetch origin -p && git fetch upstream -p
+  k = log --graph --all --pretty=format:'%C(auto)%h %C("#"7c80b6)%as%C(auto)%d %s'
+  nuke = ! git branch | grep -v $(git main) | xargs git branch -D && git gc
+  rum = ! git fetch upstream && git rebase "upstream/$(git main)"
+  cane = commit --amend --no-edit
+  pff = ! git branch | grep \\* | sed 's/\\* //' | xargs git push --force-with-lease origin
+  crepe = ! git branch | grep \\* | sed 's/\\* //' | xargs git push -u origin
+  wip = commit -m'wip' --no-verify
+  fit = ! git switch -c "$1" "upstream/$(git main)" "#" # The last "#" prevents bash from handling the extra parameters.
+  main = ! git rev-parse --verify upstream/master > /dev/null 2>&1 && echo "master" || echo "main"
+
+[diff]
+  tool = vimdiff
+
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+
+[mergetool "vimdiff"]
+  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+
+[gui]
+  gcwarning = false
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  features = side-by-side line-numbers
+  syntax-theme = Nord
+  minus-style = syntax "#87005f"
+  minus-emph-style = syntax "#87005f"
+  minus-non-emph-style = syntax black
+  plus-style = syntax "#008787"
+  plus-emph-style = syntax "#008787"
+  plus-non-emph-style = syntax black
+
+[delta "line-numbers"]
+  line-numbers-minus-style = white
+  line-numbers-plus-style = white
