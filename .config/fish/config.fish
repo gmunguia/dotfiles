@@ -41,6 +41,8 @@ alias paste="pbpaste"
 export BAT_THEME=Nord
 alias cat="bat"
 
+alias x="exa"
+
 # dotfiles bare repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
