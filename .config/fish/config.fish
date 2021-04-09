@@ -43,6 +43,8 @@ alias cat="bat"
 
 alias x="exa"
 
+alias g="git"
+
 # dotfiles bare repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
