@@ -43,10 +43,13 @@ alias cat="bat"
 
 alias x="exa -lhF"
 alias g="git"
+alias v="nvim"
 
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+# cd into root directory of current repository.
+alias cdr='test -n (git rev-parse --show-cdup) && cd (git rev-parse --show-cdup)'
 
 # dotfiles bare repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
