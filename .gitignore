@@ -1,0 +1,6 @@
+.env
+node_modules
+.tern-project
+.tern-port
+.DS_Store
+.cfg

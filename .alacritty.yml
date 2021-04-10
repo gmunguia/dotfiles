@@ -1,0 +1,64 @@
+window:
+  dimensions:
+    columns: 140
+    lines: 40
+  padding:
+    x: 5
+    y: 1
+
+font:
+  normal:
+    family: FiraCode Nerd Font Mono
+  size: 16.0
+
+colors:
+  primary:
+    background: "#2E3440"
+    foreground: "#D8DEE9"
+  normal:
+    black: "#3B4252"
+    red: "#BF616A"
+    green: "#A3BE8C"
+    yellow: "#EBCB8B"
+    blue: "#81A1C1"
+    magenta: "#B48EAD"
+    cyan: "#88C0D0"
+    white: "#E5E9F0"
+  bright:
+    black: "#4C566A"
+    red: "#BF616A"
+    green: "#A3BE8C"
+    yellow: "#EBCB8B"
+    blue: "#81A1C1"
+    magenta: "#B48EAD"
+    cyan: "#8FBCBB"
+    white: "#ECEFF4"
+
+selection:
+  save_to_clipboard: true
+
+shell:
+  program: /usr/local/bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux new -A -s alacritty"
+
+mouse_bindings:
+  - { mouse: Middle, action: PasteSelection }
+  - { mouse: Right, action: PasteSelection }
+
+key_bindings:
+  # \x1e is Ctrl-^, the tmux prefix configured in `tmux.conf`.
+  - { key: T, mods: Control, chars: "\x1ec" }
+  - { key: Tab, mods: Shift|Control, chars: "\x1ep" }
+  - { key: Tab, mods: Control, chars: "\x1en" }
+  - { key: Key1, mods: Command, chars: "\x1e0" }
+  - { key: Key2, mods: Command, chars: "\x1e1" }
+  - { key: Key3, mods: Command, chars: "\x1e2" }
+  - { key: Key4, mods: Command, chars: "\x1e3" }
+  - { key: Key5, mods: Command, chars: "\x1e4" }
+  - { key: Key6, mods: Command, chars: "\x1e5" }
+  - { key: Key7, mods: Command, chars: "\x1e6" }
+  - { key: Key8, mods: Command, chars: "\x1e7" }
+  - { key: Key9, mods: Command, chars: "\x1e8" }
