@@ -1,0 +1,18 @@
+{
+  "coc.source.emoji.filetypes": null,
+  "suggest.maxCompleteItemCount": 10,
+  "diagnostic.displayByAle": true,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "javascript.suggestionActions.enabled": false,
+  "languageserver": {
+    "rescript": {
+      "enable": true,
+      "module": "~/vim-dein/repos/github.com/rescript-lang/vim-rescript/rescript-vscode/extension/server/out/server.js",
+      "args": ["--node-ipc"],
+      "filetypes": ["rescript"],
+      "rootPatterns": ["bsconfig.json"]
+    }
+  }
+}
