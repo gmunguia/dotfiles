@@ -64,6 +64,9 @@ if status is-interactive
   # https://asdf-vm.com/#/core-manage-asdf-vm?id=add-to-your-shell
   # source ~/.asdf/asdf.fish
 
+  # https://www.nordtheme.com/docs/ports/dircolors/installation
+  test -r ~/.dir_colors && gdircolors -c ~/.dir_colors | source
+
   set -U fish_color_command brwhite
   set -U fish_color_param brblue
   set -U fish_color_end brgreen
