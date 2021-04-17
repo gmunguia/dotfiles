@@ -1,3 +1,3 @@
-[submodule "/Users/gerardomunguia/.tmux/themes/nord-tmux"]
-	path = /Users/gerardomunguia/.tmux/themes/nord-tmux
+[submodule ".tmux/themes/nord-tmux"]
+	path = .tmux/themes/nord-tmux
 	url = https://github.com/arcticicestudio/nord-tmux.git
