@@ -54,6 +54,12 @@ alias cdr='test -n (git rev-parse --show-cdup) && cd (git rev-parse --show-cdup)
 # dotfiles bare repo
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+# sed on all files at once
+alias findreplace="fd '.*' -t f --print0 | xargs -0 sed -i '' -E"
+
+# fuzzy cd
+alias fcd="cd (fd '.*' -t d --exclude Caches | fzf)"
+
 if status is-interactive
   # https://github.com/starship/starship#fish
   starship init fish | source
