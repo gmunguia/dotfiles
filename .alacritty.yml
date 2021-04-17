@@ -3,13 +3,13 @@ window:
     columns: 140
     lines: 40
   padding:
-    x: 5
-    y: 1
+    x: 3
+    y: 3
 
 font:
   normal:
     family: FiraCode Nerd Font Mono
-  size: 16.0
+  size: 17.5
 
 colors:
   primary:
