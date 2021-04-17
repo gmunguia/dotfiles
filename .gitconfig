@@ -11,6 +11,7 @@
 
 [alias]
   vimdiff = mergetool -t vimdiff
+  s = status
   co = checkout
   cp = cherry-pick
   fa = ! git fetch origin -p && git fetch upstream -p
