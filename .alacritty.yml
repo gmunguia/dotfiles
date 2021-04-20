@@ -53,12 +53,12 @@ key_bindings:
   - { key: T, mods: Control, chars: "\x1ec" }
   - { key: Tab, mods: Shift|Control, chars: "\x1ep" }
   - { key: Tab, mods: Control, chars: "\x1en" }
-  - { key: Key1, mods: Command, chars: "\x1e0" }
-  - { key: Key2, mods: Command, chars: "\x1e1" }
-  - { key: Key3, mods: Command, chars: "\x1e2" }
-  - { key: Key4, mods: Command, chars: "\x1e3" }
-  - { key: Key5, mods: Command, chars: "\x1e4" }
-  - { key: Key6, mods: Command, chars: "\x1e5" }
-  - { key: Key7, mods: Command, chars: "\x1e6" }
-  - { key: Key8, mods: Command, chars: "\x1e7" }
-  - { key: Key9, mods: Command, chars: "\x1e8" }
+  - { key: Key1, mods: Command, chars: "\x1e1" }
+  - { key: Key2, mods: Command, chars: "\x1e2" }
+  - { key: Key3, mods: Command, chars: "\x1e3" }
+  - { key: Key4, mods: Command, chars: "\x1e4" }
+  - { key: Key5, mods: Command, chars: "\x1e5" }
+  - { key: Key6, mods: Command, chars: "\x1e6" }
+  - { key: Key7, mods: Command, chars: "\x1e7" }
+  - { key: Key8, mods: Command, chars: "\x1e8" }
+  - { key: Key9, mods: Command, chars: "\x1e0" }
