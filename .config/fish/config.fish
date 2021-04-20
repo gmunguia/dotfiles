@@ -5,6 +5,8 @@ fish_vi_key_bindings
 export LC_ALL=en_GB.UTF-8
 export LANG=en_GB.UTF-8
 
+export EDITOR=nvim
+
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--bind=ctrl-u:page-up,ctrl-d:page-down'
 
@@ -21,6 +23,8 @@ function fish_user_key_bindings
   bind -M insert \e\[C forward-word
   bind -M insert \e\[D backward-word
   bind -M insert \cR fzf_reverse_isearch
+  bind -M insert \cF edit_command_buffer
+  bind -M command \cF edit_command_buffer
 end
 
 function fish_title
