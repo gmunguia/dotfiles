@@ -71,6 +71,8 @@ if status is-interactive
   # https://github.com/ranger/ranger
   abbr r ranger
 
+  abbr ps procs -w -W 2 --sortd CPU
+
   # https://github.com/starship/starship#fish
   starship init fish | source
 
