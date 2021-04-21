@@ -13,15 +13,15 @@ export FZF_DEFAULT_OPTS='--bind=ctrl-u:page-up,ctrl-d:page-down'
 function fzf_reverse_isearch
   history merge
   set removeTimestampPattern 's/^[0-9-]\{10\} # //'
-  history --show-time="%Y-%m-%d # " -z | fzf --read0 --print0 --tiebreak=index | sed $removeTimestampPattern | read -lz result
+  history --show-time="%Y-%m-%d # " -z | fzf --read0 --print0 --tiebreak=index --query=(commandline) | sed $removeTimestampPattern | read -lz result
   and commandline -- $result
   commandline -f repaint
 end
 
 function fish_user_key_bindings
   bind -M insert -k nul accept-autosuggestion
-  bind -M insert \e\[C forward-word
-  bind -M insert \e\[D backward-word
+  bind -M insert \e\[C nextd-or-forward-word
+  bind -M insert \e\[D prevd-or-backward-word
   bind -M insert \cR fzf_reverse_isearch
   bind -M insert \cF edit_command_buffer
   bind -M command \cF edit_command_buffer
