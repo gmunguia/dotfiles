@@ -38,33 +38,39 @@ function fish_title
   echo $title
 end
 
-alias copy="pbcopy"
-alias paste="pbpaste"
-
-# https://github.com/sharkdp/bat
-export BAT_THEME=Nord
-alias cat="bat"
-
-alias x="exa -lhF"
-alias g="git"
-alias v="nvim"
-
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-# cd into root directory of current repository.
-alias cdr='test -n (git rev-parse --show-cdup) && cd (git rev-parse --show-cdup)'
-
-# dotfiles bare repo
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-# sed on all files at once
-alias findreplace="fd '.*' -t f --print0 | xargs -0 sed -i '' -E"
-
-# fuzzy cd
-alias fcd="cd (fd '.*' -t d --exclude Caches | fzf)"
-
 if status is-interactive
+  alias copy="pbcopy"
+  alias paste="pbpaste"
+
+  # https://github.com/sharkdp/bat
+  export BAT_THEME=Nord
+  abbr cat "bat"
+
+  abbr x "exa -lhF"
+  abbr g "git"
+  abbr v "nvim"
+
+  abbr .. "cd .."
+  abbr ... "cd ../.."
+  abbr .... "cd ../../.."
+
+  # cd into root directory of current repository.
+  abbr cdr 'test -n (git rev-parse --show-cdup) && cd (git rev-parse --show-cdup)'
+
+  abbr less "less -MNi"
+
+  # dotfiles bare repo
+  alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+  # sed on all files at once
+  abbr findreplace "fd '.*' -t f --print0 | xargs -0 sed -i '' -E"
+
+  # fuzzy-find a folder and cd into it
+  abbr f "cd (fd '.*' -t d --exclude Caches | fzf)"
+
+  # https://github.com/ranger/ranger
+  abbr r ranger
+
   # https://github.com/starship/starship#fish
   starship init fish | source
 
