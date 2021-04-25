@@ -368,7 +368,6 @@ set tabstop=2
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
-set wrapmargin=5
 
 set title
 
