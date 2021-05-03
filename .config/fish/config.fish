@@ -73,6 +73,8 @@ if status is-interactive
 
   abbr ps procs -w -W 2 --sortd CPU
 
+  abbr week date +%V
+
   # https://github.com/starship/starship#fish
   starship init fish | source
 
