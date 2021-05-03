@@ -81,8 +81,8 @@ if status is-interactive
   # https://github.com/gsamokovarov/jump
   source (jump shell fish | psub)
 
-  # https://asdf-vm.com/#/core-manage-asdf-vm?id=add-to-your-shell
-  # source ~/.asdf/asdf.fish
+  # https://asdf-vm.com/#/core-manage-asdf?id=add-to-your-shell
+  source (brew --prefix asdf)"/asdf.fish"
 
   # https://www.nordtheme.com/docs/ports/dircolors/installation
   test -r ~/.dir_colors && gdircolors -c ~/.dir_colors | source
