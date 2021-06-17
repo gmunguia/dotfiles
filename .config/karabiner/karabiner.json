@@ -36,7 +36,7 @@
               {
                 "conditions": [
                   {
-                    "bundle_identifiers": ["^io\\.alacritty$", "^co\\.zeit\\.hyper$"],
+                    "bundle_identifiers": ["^io\\.alacritty$"],
                     "type": "frontmost_application_if"
                   }
                 ],
@@ -85,12 +85,12 @@
             ]
           },
           {
-            "description": "Change caps_lock to command if pressed with other keys, to escape if pressed alone. Control instead of command in hyper.",
+            "description": "Change caps_lock to command if pressed with other keys, to escape if pressed alone. Control instead of command in terminal.",
             "manipulators": [
               {
                 "conditions": [
                   {
-                    "bundle_identifiers": ["^io\\.alacritty$", "^co\\.zeit\\.hyper$"],
+                    "bundle_identifiers": ["^io\\.alacritty$"],
                     "type": "frontmost_application_if"
                   }
                 ],
