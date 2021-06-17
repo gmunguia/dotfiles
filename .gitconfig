@@ -9,6 +9,9 @@
 [push]
   default = simple
 
+[pull]
+  ff = only
+
 [alias]
   vimdiff = mergetool -t vimdiff
   s = status
