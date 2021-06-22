@@ -38,8 +38,6 @@ function fish_title
   echo $title
 end
 
-load_nvm
-
 if status is-interactive
   alias copy="pbcopy"
   alias paste="pbpaste"
