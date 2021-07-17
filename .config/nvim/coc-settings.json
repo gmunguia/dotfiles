@@ -1,5 +1,7 @@
 {
   "coc.source.emoji.filetypes": null,
+  "coc.source.around.enable": false,
+  "coc.source.buffer.enable": false,
   "suggest.maxCompleteItemCount": 10,
   "diagnostic.displayByAle": true,
   "emmet.includeLanguages": {
