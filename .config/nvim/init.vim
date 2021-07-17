@@ -202,10 +202,14 @@ map <leader> <Plug>(easymotion-prefix)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Nvim terminal
+tmap <leader><esc> <C-\><C-n>
 autocmd TermOpen * setlocal bufhidden=hide
 autocmd TermOpen * setlocal signcolumn=no
 autocmd TermOpen * setlocal number&
 autocmd TermEnter * setlocal relativenumber&
+" Change window size to make space for relative numbers
+autocmd TermEnter * 4winc <
+autocmd TermLeave * 4winc >
 autocmd TermLeave * setlocal relativenumber
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -265,9 +269,6 @@ vnoremap <expr> p IsSelectionAtEndOfLine() ? '"_dp' : '"_dP'
 
 " Copy to system clipboard.
 set clipboard+=unnamedplus
-
-" Easier scape from terminal.
-tmap <leader><esc> <C-\><C-n>
 
 " Align blocks of text and keep them selected
 vmap < <gv
