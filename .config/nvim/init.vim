@@ -115,6 +115,7 @@ endfunction
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap <C-f> <Plug>(coc-fix-current)
+nmap <leader>rn <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
