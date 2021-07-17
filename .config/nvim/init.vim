@@ -45,8 +45,6 @@ call dein#add('vim-airline/vim-airline')
 call dein#add('vim-airline/vim-airline-themes')
 " Markdown
 call dein#add('plasticboy/vim-markdown', {'on_ft': 'markdown'})
-" Rescript
-call dein#add('rescript-lang/vim-rescript')
 
 " Required:
 call dein#end()
@@ -150,11 +148,6 @@ let g:ale_fixers['javascriptreact'] = ['prettier']
 let g:ale_fixers['typescriptreact'] = ['prettier']
 let g:ale_fixers['haskell'] = ['brittany']
 let g:ale_fixers['terraform'] = ['terraform']
-let g:ale_fixers['rescript'] = [
-\  {buffers -> {
-\    'command': 'bsc -color never -format %t'
-\  }},
-\]
 let g:ale_linters = {}
 let g:ale_linters['haskell'] = ['stack_build']
 let g:ale_linters['terraform'] = ['tflint']
