@@ -5,7 +5,7 @@ fish_vi_key_bindings
 export LC_ALL=en_GB.UTF-8
 export LANG=en_GB.UTF-8
 
-export EDITOR=nvim
+export EDITOR=lvim
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--bind=ctrl-u:page-up,ctrl-d:page-down'
@@ -49,6 +49,7 @@ if status is-interactive
   abbr x "exa -lhF"
   abbr g "git"
   abbr v "nvim"
+  abbr l "lvim"
 
   abbr .. "cd .."
   abbr ... "cd ../.."
