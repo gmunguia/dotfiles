@@ -83,7 +83,7 @@ if status is-interactive
   source (jump shell fish | psub)
 
   # https://asdf-vm.com/#/core-manage-asdf?id=add-to-your-shell
-  source (brew --prefix asdf)"/asdf.fish"
+  source (brew --prefix asdf)"/libexec/asdf.fish"
 
   # https://www.nordtheme.com/docs/ports/dircolors/installation
   test -r ~/.dir_colors && gdircolors -c ~/.dir_colors | source
@@ -97,3 +97,7 @@ if status is-interactive
   set -U fish_color_comment brblack
   set -U fish_color_autosuggestion brblack
 end
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[ -f /Users/gerardomunguia/.config/yarn/global/node_modules/tabtab/.completions/yarn.fish ]; and . /Users/gerardomunguia/.config/yarn/global/node_modules/tabtab/.completions/yarn.fish
