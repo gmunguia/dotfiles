@@ -46,7 +46,7 @@ if status is-interactive
   export BAT_THEME=Nord
   abbr cat "bat"
 
-  abbr x "exa -lhF"
+  abbr x "exa -lhFa"
   abbr g "git"
   abbr v "nvim"
   abbr l "lvim"
