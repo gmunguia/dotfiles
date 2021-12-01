@@ -1,5 +1,5 @@
 # https://www.atlassian.com/git/tutorials/dotfiles
-git clone --bare gmunguia/dotfiles $HOME/.cfg
+git clone --bare --recurse-submodules gmunguia/dotfiles $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config checkout
 config config --local status.showUntrackedFiles no
@@ -27,15 +27,25 @@ brew install karabiner-elements
 brew install megasync
 brew install spectacle
 
+brew tap homebrew/cask-fonts
 brew install font-fira-code-nerd-font
 brew install aws-vault
 brew install awscli
 brew install asdf
 brew install tree-sitter
 brew install neovim
-brew install fish
 brew install alacritty
 brew install tmux
+brew install starship
+brew install jump
+
+# nvm shouldn't be installed with homebrew
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+brew install fish
+sudo sh -c "echo $(which fish) >> /etc/shells"
+chsh -s $(which fish)
+fish -c'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher'
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings we’re about to change

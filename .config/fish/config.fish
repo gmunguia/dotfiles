@@ -1,4 +1,5 @@
 set fish_greeting
+set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
 
 fish_vi_key_bindings
 
@@ -97,7 +98,3 @@ if status is-interactive
   set -U fish_color_comment brblack
   set -U fish_color_autosuggestion brblack
 end
-
-# tabtab source for yarn package
-# uninstall by removing these lines or running `tabtab uninstall yarn`
-[ -f /Users/gerardomunguia/.config/yarn/global/node_modules/tabtab/.completions/yarn.fish ]; and . /Users/gerardomunguia/.config/yarn/global/node_modules/tabtab/.completions/yarn.fish

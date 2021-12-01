@@ -38,7 +38,7 @@ selection:
   save_to_clipboard: true
 
 shell:
-  program: /usr/local/bin/fish
+  program: /opt/homebrew/bin/fish
   args:
     - -l
     - -c
