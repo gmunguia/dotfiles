@@ -1,6 +1,6 @@
 [core]
   excludesfile = ~/.gitignore
-  editor = nvim
+  editor = lvim
   pager = delta
 
 [init]
@@ -58,3 +58,5 @@
 [delta "line-numbers"]
   line-numbers-minus-style = white
   line-numbers-plus-style = white
+[user]
+	name = Gerardo Munguía Hoyo
