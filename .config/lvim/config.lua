@@ -113,9 +113,6 @@ lvim.keys.term_mode = {
 lvim.builtin.which_key.mappings["b"] = {
   "<cmd>Telescope oldfiles<cr>", "Buffers"
 }
-lvim.builtin.which_key.mappings["s"] = {
-  "<cmd>lua require'telescope.builtin'.grep_string{ word_match = \"-w\", only_sort_text = true, search = '', file_ignore_patterns = { '%.lock', '%node_modules%' } }<CR>", "fzf"
-}
 lvim.builtin.which_key.mappings["S"] = {
   "<cmd>lua require'spectre'.open()<CR>", "search&replace"
 }
@@ -131,12 +128,6 @@ lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.highlight.enabled = true
 
 lvim.builtin.telescope.defaults.file_ignore_patterns = { "*.lock", "node_modules" }
-lvim.builtin.telescope.extensions.fzf = {
-  fuzzy = true,
-  override_generic_sorter = true,
-  override_file_sorter = true,
-  case_mode = "smart_case",
-}
 lvim.builtin.telescope.pickers = {
   find_files = {
     hidden = true
