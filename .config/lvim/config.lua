@@ -1,25 +1,28 @@
 lvim.leader = "space"
-lvim.format_on_save = true
-lvim.lint_on_save = true
 lvim.colorscheme = "nord"
 vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.mouse = ""
 
-lvim.lang.javascript.formatters = { { exe = "prettier_d_slim" } }
-lvim.lang.javascriptreact.formatters = lvim.lang.javascript.formatters
-lvim.lang.typescript.formatters = lvim.lang.javascript.formatters
-lvim.lang.typescriptreact.formatters = lvim.lang.javascript.formatters
-lvim.lang.javascript.linters = { { exe = "eslint_d" } }
-lvim.lang.javascriptreact.linters = lvim.lang.javascript.linters
-lvim.lang.typescript.linters = lvim.lang.javascript.linters
-lvim.lang.typescriptreact.linters = lvim.lang.javascript.linters
+lvim.format_on_save = true
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    exe = "prettier_d_slim",
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "graphql", "json" },
+  },
+}
+
+lvim.lint_on_save = true
+local linters = require "lvim.lsp.null-ls.linters"
+linters.setup {
+  {
+    exe = "eslint_d",
+    filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+  },
+}
 
 lvim.plugins = {
-  {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make',
-  },
   {
     "tpope/vim-surround",
     keys = {"c", "d", "y"},
