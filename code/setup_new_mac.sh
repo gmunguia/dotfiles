@@ -39,13 +39,9 @@ brew install tmux
 brew install starship
 brew install jump
 
-# nvm shouldn't be installed with homebrew
+# nvm shouldn't be installed with homebrew and it needs to be available before fish
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 
-brew install fish
-sudo sh -c "echo $(which fish) >> /etc/shells"
-chsh -s $(which fish)
-fish -c'curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher'
 
 # Close any open System Preferences panes, to prevent them from overriding
 # settings weÕre about to change
@@ -126,3 +122,12 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Refresh settings
 killall Finder
+
+brew install fish
+brew install fisher
+sudo sh -c "echo $(which fish) >> /etc/shells"
+sudo chsh -s $(which fish)
+fish
+fisher update
+nvm install --lts
+npm i -g yarn
