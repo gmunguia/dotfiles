@@ -122,9 +122,10 @@ lvim.builtin.which_key.mappings["S"] = {
 
 lvim.builtin.nvimtree.side = "left"
 lvim.builtin.nvimtree.disable_window_picker = 1
-lvim.builtin.nvimtree.bindings = {
+lvim.builtin.nvimtree.mappings = {
   { key = "<Tab>", cb = "<c-w><c-w>"}
 }
+lvim.builtin.nvimtree.hide_dotfiles = 0
 
 lvim.builtin.treesitter.ensure_installed = {}
 lvim.builtin.treesitter.highlight.enabled = true
