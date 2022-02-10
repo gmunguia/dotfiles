@@ -81,8 +81,8 @@ lvim.keys.normal_mode = {
     '"nN"[v:searchforward]',
     { noremap = true, expr = true }
   },
-  ["]e"] = "<cmd>lua vim.lsp.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
-  ["[e"] = "<cmd>lua vim.lsp.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+  ["]e"] = "<cmd>lua vim.diagnostic.goto_next({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
+  ["[e"] = "<cmd>lua vim.diagnostic.goto_prev({popup_opts = {border = lvim.lsp.popup_border}})<cr>",
   [";"] = { "<Plug>Lightspeed_s", { noremap = false } },
   [","] = { "<Plug>Lightspeed_S", { noremap = false } },
   ["gt"] = "<cmd>tabnext<cr>",
