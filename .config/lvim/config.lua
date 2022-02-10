@@ -124,7 +124,15 @@ lvim.builtin.nvimtree.mappings = {
 lvim.builtin.nvimtree.filters = { dotfiles = false }
 lvim.builtin.nvimtree.respect_buf_cwd = 0
 
-lvim.builtin.treesitter.ensure_installed = {}
+lvim.builtin.treesitter.ensure_installed = {
+  "bash",
+  "javascript",
+  "json",
+  "lua",
+  "typescript",
+  "css",
+  "yaml",
+}
 lvim.builtin.treesitter.highlight.enabled = true
 
 lvim.builtin.telescope.defaults.file_ignore_patterns = { "*.lock", "node_modules" }
