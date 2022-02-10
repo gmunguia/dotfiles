@@ -8,16 +8,15 @@ lvim.format_on_save = true
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
   {
-    exe = "prettier_d_slim",
+    command = "prettier",
     filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "graphql", "json" },
   },
 }
 
-lvim.lint_on_save = true
 local linters = require "lvim.lsp.null-ls.linters"
 linters.setup {
   {
-    exe = "eslint_d",
+    command = "eslint",
     filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
   },
 }
