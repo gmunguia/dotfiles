@@ -1,5 +1,9 @@
 set fish_greeting
+
 set -U fish_user_paths /opt/homebrew/bin $fish_user_paths
+
+# Lunarvim is installed in ~/.local/bin
+set -U fish_user_paths ~/.local/bin $fish_user_paths
 
 fish_vi_key_bindings
 
