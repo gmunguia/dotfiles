@@ -3,6 +3,7 @@ lvim.colorscheme = "nord"
 vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.mouse = ""
+vim.opt.shell = "/bin/sh"
 
 lvim.format_on_save = true
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -59,7 +60,7 @@ lvim.plugins = {
 
 -- Hide annoying bufferline https://github.com/LunarVim/LunarVim/issues/1272
 lvim.builtin.bufferline.active = false
-vim.cmd [[ set showtabline=1 ]]
+vim.opt.showtabline = 1
 
 lvim.keys.normal_mode = {
   ["Q"]= "<NOP>",
