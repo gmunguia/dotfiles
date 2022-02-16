@@ -38,6 +38,7 @@ brew install alacritty
 brew install tmux
 brew install starship
 brew install jump
+brew install gnu-sed # needed by Lunarvim
 
 # nvm shouldn't be installed with homebrew and it needs to be available before fish
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
