@@ -3,7 +3,6 @@ lvim.colorscheme = "nord"
 vim.opt.relativenumber = true
 vim.opt.wrap = true
 vim.opt.mouse = ""
-vim.opt.shell = "/bin/sh"
 
 lvim.format_on_save = true
 local formatters = require "lvim.lsp.null-ls.formatters"
@@ -115,6 +114,16 @@ lvim.builtin.which_key.mappings["b"] = {
 }
 lvim.builtin.which_key.mappings["S"] = {
   "<cmd>lua require'spectre'.open()<CR>", "search&replace"
+}
+
+-- Use sh as native shell for performance, but use fish in pseudoterminals.
+vim.opt.shell = "/bin/sh"
+lvim.builtin.which_key.mappings["t"] = {
+  function ()
+    local terminalShell = os.getenv("SHELL")
+    vim.fn.termopen(terminalShell)
+  end,
+  "terminal"
 }
 
 lvim.builtin.nvimtree.side = "left"
