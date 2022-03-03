@@ -28,6 +28,7 @@
   wip = commit -m'wip' --no-verify
   fit = ! git switch -c "$1" "upstream/$(git main)" "#" # The last "#" prevents bash from handling the extra parameters.
   main = ! git rev-parse --verify upstream/master > /dev/null 2>&1 && echo "master" || echo "main"
+  stack = ! git switch -c "$1" && git rebase -i "upstream/$(git main)" && git push --force-with-lease origin HEAD:"$1" && git switch - && git branch -D "$1" "#" # The last "#" prevents bash from handling the extra parameters.
 
 [diff]
   tool = vimdiff
