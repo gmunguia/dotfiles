@@ -119,10 +119,7 @@ lvim.builtin.which_key.mappings["S"] = {
 -- Use sh as native shell for performance, but use fish in pseudoterminals.
 vim.opt.shell = "/bin/sh"
 lvim.builtin.which_key.mappings["t"] = {
-  function ()
-    local terminalShell = os.getenv("SHELL")
-    vim.fn.termopen(terminalShell)
-  end,
+  "<cmd>call termopen('$SHELL')<cr>",
   "terminal"
 }
 
