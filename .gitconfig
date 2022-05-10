@@ -17,7 +17,8 @@
   s = status
   co = checkout
   cp = cherry-pick
-  fa = ! git fetch origin -p && git fetch upstream -p
+  fa = ! git fetch --all -p
+  fu = ! git fetch upstream -p
   k = log --graph --all --pretty=format:'%C(auto)%h %C("#"7c80b6)%as%C(auto)%d %s'
   nuke = ! git branch | grep -v $(git main) | xargs git branch -D && git gc
   bomb = ! git branch -d $(git branch --merged="upstream/$(git main)" | grep -v "$(git main)")
