@@ -124,8 +124,11 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 
 lvim.builtin.nvimtree.side = "left"
-lvim.builtin.nvimtree.disable_window_picker = 1
-lvim.builtin.nvimtree.mappings = {
+lvim.builtin.nvimtree.setup.actions.change_dir.enable = false
+lvim.builtin.nvimtree.setup.actions.open_file.window_picker = {
+  enable = false
+}
+lvim.builtin.nvimtree.setup.view.mappings.list = {
   { key = "<Tab>", cb = "<c-w><c-w>" }
 }
 lvim.builtin.nvimtree.filters = { dotfiles = false }
