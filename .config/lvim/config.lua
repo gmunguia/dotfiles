@@ -55,6 +55,12 @@ lvim.plugins = {
       require("spectre").setup()
     end,
   },
+  {
+    "hrsh7th/cmp-emoji",
+  },
+  {
+    "ray-x/cmp-treesitter",
+  },
 }
 
 -- Hide annoying bufferline https://github.com/LunarVim/LunarVim/issues/1272
@@ -159,3 +165,16 @@ lvim.autocommands.custom_groups = {
 }
 
 lvim.builtin.lualine.style = "default"
+
+lvim.builtin.cmp.sources = {
+  { name = "emoji" },
+  { name = "nvim_lsp" },
+  { name = "path" },
+  { name = "treesitter" },
+}
+lvim.builtin.cmp.formatting.source_names = {
+  emoji = "(Emoji)",
+  nvim_lsp = "(LSP)",
+  path = "(Path)",
+  treesitter = "(Tree)",
+}
