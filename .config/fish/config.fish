@@ -67,10 +67,7 @@ if status is-interactive
   abbr findreplace "fd '.*' -t f --print0 | xargs -0 sed -i '' -E"
 
   # fuzzy-find a folder and cd into it
-  abbr f "cd (fd '.*' -t d --exclude Caches | fzf)"
-
-  # https://github.com/ranger/ranger
-  abbr r ranger
+  abbr j "cd (fd '.*' -t d --exclude Caches | fzf)"
 
   abbr ps procs -w -W 2 --sortd CPU
 
@@ -78,9 +75,6 @@ if status is-interactive
 
   # https://github.com/starship/starship#fish
   starship init fish | source
-
-  # https://github.com/gsamokovarov/jump
-  source (jump shell fish | psub)
 
   # https://asdf-vm.com/#/core-manage-asdf?id=add-to-your-shell
   source (brew --prefix asdf)"/libexec/asdf.fish"
