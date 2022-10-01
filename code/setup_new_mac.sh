@@ -6,6 +6,7 @@ git clone --bare --recurse-submodules gmunguia/dotfiles $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config checkout
 config config --local status.showUntrackedFiles no
+config remote set-url --push origin git@github.com:gmunguia/dotfiles.git
 
 # Install homebrew.
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
