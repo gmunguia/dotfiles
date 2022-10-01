@@ -27,17 +27,6 @@ function fish_user_key_bindings
   bind -M command \cF edit_command_buffer
 end
 
-function fish_title
-  set dirnamePattern 's#^.*/##'
-  set title (pwd | sed $dirnamePattern)
-
-  if test "$NVIM_LISTEN_ADDRESS" = ""
-    tmux rename-window $title
-  end
-
-  echo $title
-end
-
 if status is-interactive
   alias copy="pbcopy"
   alias paste="pbpaste"
@@ -87,4 +76,17 @@ if status is-interactive
   set -U fish_color_error red
   set -U fish_color_comment brblack
   set -U fish_color_autosuggestion brblack
+
+  export TMUX_WINDOW_ID=(tmux list-windows | grep active | sed -E 's/^.*(@[0-9]+) .*$/\1/')
+  function fish_title
+    set title (basename (pwd))
+
+    # I don't want the window title to change when commands run in Neovim integrated terminal.
+    if not set -q NVIM_LISTEN_ADDRESS
+      # `fish_title` runs before and after commands. `rename-window` renames the currently active window by default. Without targetting, long commands that finish after I have switched windows will cause the wrong window to be renamed.
+      tmux rename-window -t $TMUX_WINDOW_ID $title
+    end
+
+    echo $title
+  end
 end
