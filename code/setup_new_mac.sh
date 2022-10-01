@@ -130,5 +130,7 @@ sudo sh -c "echo $(which fish) >> /etc/shells"
 sudo chsh -s $(which fish)
 fish
 fisher update
-nvm install --lts
+
+# Set up NodeJS.
+fnm install --lts
 npm i -g yarn
