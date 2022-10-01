@@ -1,57 +1,23 @@
+# Does this command wait for install to finish before exit?
+xcode-select --install
+
 # https://www.atlassian.com/git/tutorials/dotfiles
 git clone --bare --recurse-submodules gmunguia/dotfiles $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config checkout
 config config --local status.showUntrackedFiles no
 
-# TODO https://github.com/Homebrew/homebrew-bundle
-brew install fzf
-brew install ripgrep
-brew install bat
-brew install fd
-brew install tig
-brew install procs
-brew install exa
-brew install httpie
-brew install glow
-brew install git-delta
+# Install homebrew.
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew bundle
 
-brew install macs-fan-control
-brew install keeweb
-brew install shortcuts
-brew install gimp
-brew install google-chrome
-brew install vlc
-brew install qbittorrent
-brew install karabiner-elements
-brew install megasync
-brew install spectacle
-
-brew tap homebrew/cask-fonts
-brew install font-fira-code-nerd-font
-brew install aws-vault
-brew install awscli
-brew install asdf
-brew install tree-sitter
-brew install neovim
-brew install alacritty
-brew install tmux
-brew install starship
-brew install jump
-brew install gnu-sed # needed by Lunarvim
-
-# nvm shouldn't be installed with homebrew and it needs to be available before fish
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-
-
-# Close any open System Preferences panes, to prevent them from overriding
-# settings weÕre about to change
+# Close any open System Preferences panes, to prevent them from overriding settings we're about to change.
 osascript -e 'tell application "System Preferences" to quit'
 
-# Ask for the administrator password upfront
+# Ask for the administrator password upfront.
 sudo -v
 
-# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
+# Keep-alive: update existing `sudo` time stamp until `.osx` has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # I don't use the dock. https://apple.stackexchange.com/a/298826
@@ -60,7 +26,6 @@ defaults write com.apple.dock no-bouncing -bool true
 defaults write com.apple.dock autohide -bool true
 killall Dock
 
-# Spotlight config
 defaults write com.apple.spotlight orderedItems -array \
 	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
 	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
@@ -87,49 +52,47 @@ defaults write com.apple.spotlight orderedItems -array \
 # Reload settings.
 killall mds > /dev/null 2>&1
 
-# Disable the sound effects on boot
+# Disable the sound effects on boot.
 sudo nvram SystemAudioVolume=" "
 
-# Increase sound quality for Bluetooth headphones/headsets
+# Increase sound quality for Bluetooth headphones/headsets.
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
-# Disable auto-correct
+# Disable auto-correct.
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
-# Finder: allow quitting via Cmd + Q; doing so will also hide desktop icons
+# Finder: allow quitting via Cmd + Q; doing so will also hide desktop icons.
 defaults write com.apple.finder QuitMenuItem -bool true
 
-# Finder: disable window animations and Get Info animations
+# Finder: disable window animations and Get Info animations.
 defaults write com.apple.finder DisableAllAnimations -bool true
 
-# Finder: show hidden files by default
+# Finder: show hidden files by default.
 defaults write com.apple.Finder AppleShowAllFiles -bool true
 
-# Finder: show all filename extensions
+# Finder: show all filename extensions.
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
-# Finder: show status bar
+# Finder: show status bar.
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# Finder: show path bar
+# Finder: show path bar.
 defaults write com.apple.finder ShowPathbar -bool true
 
-# Disable the warning when changing a file extension
+# Disable the warning when changing a file extension.
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
-# Use list view in all Finder windows by default
-# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
+# Use list view in all Finder windows by default.
+# Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`.
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Refresh settings
+# Refresh settings.
 killall Finder
 
-brew install fish
-brew install fisher
+# Set up fish.
 sudo sh -c "echo $(which fish) >> /etc/shells"
 sudo chsh -s $(which fish)
 fish
-fisher update
 fish_add_path /opt/homebrew/bin
 # Lunarvim is installed in ~/.local/bin .
 fish_add_path ~/.local/bin

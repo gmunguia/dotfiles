@@ -76,9 +76,6 @@ if status is-interactive
   # https://github.com/starship/starship#fish
   starship init fish | source
 
-  # https://asdf-vm.com/#/core-manage-asdf?id=add-to-your-shell
-  source (brew --prefix asdf)"/libexec/asdf.fish"
-
   # https://www.nordtheme.com/docs/ports/dircolors/installation
   test -r ~/.dir_colors && gdircolors -c ~/.dir_colors | source
 
