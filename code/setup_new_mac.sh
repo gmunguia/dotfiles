@@ -130,6 +130,9 @@ sudo sh -c "echo $(which fish) >> /etc/shells"
 sudo chsh -s $(which fish)
 fish
 fisher update
+fish_add_path /opt/homebrew/bin
+# Lunarvim is installed in ~/.local/bin .
+fish_add_path ~/.local/bin
 
 # Set up NodeJS.
 fnm install --lts
