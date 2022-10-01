@@ -40,10 +40,6 @@ if status is-interactive
   abbr v "nvim"
   abbr l "lvim"
 
-  abbr .. "cd .."
-  abbr ... "cd ../.."
-  abbr .... "cd ../../.."
-
   # cd into root directory of current repository.
   abbr cdr 'test -n (git rev-parse --show-cdup) && cd (git rev-parse --show-cdup)'
 
