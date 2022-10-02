@@ -1,6 +1,6 @@
 [core]
   excludesfile = ~/.gitignore
-  editor = lvim
+  editor = hx
   pager = delta
 
 [init]
@@ -33,16 +33,6 @@
   # Interactively select commits to push to a new branch.
   stack = ! git switch -c "$1" && git rebase -i "upstream/$(git main)" && git push --force-with-lease origin HEAD:"$1" && git switch - && git branch -D "$1" "#" # The last "#" prevents bash from handling the extra parameters.
 
-[diff]
-  tool = vimdiff
-
-[merge]
-  tool = vimdiff
-  conflictstyle = diff3
-
-[mergetool "vimdiff"]
-  cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-
 [gui]
   gcwarning = false
 
@@ -64,4 +54,4 @@
   line-numbers-plus-style = white
 
 [user]
-	name = Gerardo Munguía Hoyo
+  name = Gerardo Munguía Hoyo

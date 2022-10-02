@@ -5,7 +5,7 @@ fish_vi_key_bindings
 export LC_ALL=en_GB.UTF-8
 export LANG=en_GB.UTF-8
 
-export EDITOR=lvim
+export EDITOR=hx
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--bind=ctrl-u:page-up,ctrl-d:page-down'
@@ -39,6 +39,7 @@ if status is-interactive
   abbr g "git"
   abbr v "nvim"
   abbr l "lvim"
+  abbr h "hx"
 
   # cd into root directory of current repository.
   abbr cdr 'test -n (git rev-parse --show-cdup) && cd (git rev-parse --show-cdup)'
