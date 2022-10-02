@@ -1,0 +1,42 @@
+theme = "nord"
+
+[editor]
+line-number = "relative"
+mouse = false
+shell = ["fish", "-c"]
+cursorline = true
+color-modes = true
+idle-timeout = 0
+auto-format = false
+
+[editor.file-picker]
+hidden = false
+
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+newline = "none"
+
+[editor.indent-guides]
+render = true
+
+[keys.normal]
+"<" = "remove_primary_selection"
+"C" = [
+  "collapse_selection",
+  "select_mode",
+  "goto_line_end",
+  "change_selection"
+]
+"D" = [
+  "collapse_selection",
+  "select_mode",
+  "goto_line_end",
+  "delete_selection"
+]
+"C-c" = "copy_selection_on_next_line"
+"space" = { "c" = "toggle_comments", "F" = ":format" }
+">" = "command_palette"
+"[" = { "e" = "goto_prev_diag" }
+"]" = { "e" = "goto_next_diag" }
+"tab" = "rotate_view"
