@@ -56,6 +56,9 @@ killall mds > /dev/null 2>&1
 # Disable the sound effects on boot.
 sudo nvram SystemAudioVolume=" "
 
+# Disable “natural” (Lion-style) scrolling
+defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+
 # Increase sound quality for Bluetooth headphones/headsets.
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
