@@ -86,22 +86,4 @@ if status is-interactive
 
     echo $title
   end
-
-  function open_typescript
-    sed 's/\x1B\[[0-9;]*[JKmsu]//g' $script_file_name > $script_file_name".txt"
-    # `:n` opens at the nth line. `:9999999` is a workaround to open file at the end.
-    tmux new-window "hx "$script_file_name".txt:999999"
-  end
-  abbr e open_typescript
-
-  # The session started by `script` will run this config.fish file. SCRIPT is set by `script` to prevent endless recursion.
-  if not set -q SCRIPT
-    set date (date -u "+%Y-%m-%dT%H:%M:%SZ")
-    set uuid (string lower (uuidgen))
-    set script_file_name "/tmp/typescripts/"$date"-"$uuid
-    export script_file_name
-    mkdir -p "/tmp/typescripts"
-
-    exec script -t 1 -q $script_file_name
-  end
 end
