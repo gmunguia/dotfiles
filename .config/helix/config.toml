@@ -50,6 +50,18 @@ render = true
 "C-j" = "copy_selection_on_next_line"
 "C-k" = "copy_selection_on_prev_line"
 g = { l = ["select_mode", "goto_line_end", "normal_mode"], h = ["select_mode", "goto_line_start", "normal_mode"] }
+"*" = [
+  "move_prev_word_start",
+  "move_next_word_end",
+  "search_selection",
+  "search_next"
+]
+"#" = [
+  "move_prev_word_start",
+  "move_next_word_end",
+  "search_selection",
+  "search_prev"
+]
 
 [keys.select]
 "backspace" = "remove_primary_selection"
