@@ -46,7 +46,7 @@ render = true
 ]
 "C-j" = "copy_selection_on_next_line"
 "C-k" = "copy_selection_on_prev_line"
-g = { l = ["select_mode", "goto_line_end", "normal_mode"], h = ["select_mode", "goto_line_start", "normal_mode"] }
+g = { l = ["select_mode", "goto_line_end", "normal_mode"], h = ["select_mode", "goto_line_start", "normal_mode"], f = "jump_forward", b = "jump_backward" }
 "*" = [
   "move_prev_word_start",
   "move_next_word_end",
