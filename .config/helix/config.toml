@@ -26,10 +26,6 @@ render = true
 "\\" = "command_palette"
 "tab" = "rotate_view"
 "C-n" = [
-  "select_mode",
-  "move_prev_word_start",
-  "collapse_selection",
-  "move_next_word_end",
   "search_selection",
   "extend_search_next",
 ]
@@ -70,10 +66,6 @@ g = { l = ["select_mode", "goto_line_end", "normal_mode"], h = ["select_mode", "
 "\\" = "command_palette"
 "tab" = "rotate_view"
 "C-n" = [
-  "select_mode",
-  "move_prev_word_start",
-  "collapse_selection",
-  "move_next_word_end",
   "search_selection",
   "extend_search_next",
 ]
