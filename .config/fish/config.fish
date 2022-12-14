@@ -65,6 +65,8 @@ if status is-interactive
   # https://www.nordtheme.com/docs/ports/dircolors/installation
   test -r ~/.dir_colors && gdircolors -c ~/.dir_colors | source
 
+  direnv hook fish | source
+
   set -U fish_color_command brwhite
   set -U fish_color_param brblue
   set -U fish_color_end brgreen
