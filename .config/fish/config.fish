@@ -19,7 +19,7 @@ function fzf_reverse_isearch
 end
 
 function fish_user_key_bindings
-  bind -M insert -k nul accept-autosuggestion
+  bind -M insert -k nul accept-autosuggestion # If it doesn't work, check mac OS preferences for a ^-S shortcut in use.
   bind -M insert \e\[C nextd-or-forward-word
   bind -M insert \e\[D prevd-or-backward-word
   bind -M insert \cR fzf_reverse_isearch

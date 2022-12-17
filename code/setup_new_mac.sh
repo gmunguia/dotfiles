@@ -93,6 +93,13 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Refresh settings.
 killall Finder
 
+# Remove input source change shortcut.
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>32</integer><integer>49</integer><integer>262144</integer></array><key>type</key><string>standard</string></dict></dict>"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>32</integer><integer>49</integer><integer>786432</integer></array><key>type</key><string>standard</string></dict></dict>"
+
+# Apply shortcut changes.
+/System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+
 # Set up fish.
 sudo sh -c "echo $(which fish) >> /etc/shells"
 sudo chsh -s $(which fish)
