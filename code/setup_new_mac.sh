@@ -113,3 +113,11 @@ fish_add_path ~/.local/bin
 # Set up NodeJS.
 fnm install --lts
 npm i -g yarn
+
+# Language servers
+npm i -g \
+	dockerfile-language-server-nodejs \
+	typescript-language-server \
+	typescript \
+	vscode-langservers-extracted \
+	yaml-language-server

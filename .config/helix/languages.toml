@@ -1,41 +1,41 @@
 [[language]]
 name = "typescript"
-language-server = { command = "/Users/gerardomunguia/Library/Caches/fnm_multishells/4191_1664708698323/bin/typescript-language-server", args = ["--stdio"] }
+language-server = { command = "typescript-language-server", args = ["--stdio"] }
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "javascript"
-language-server = { command = "/Users/gerardomunguia/Library/Caches/fnm_multishells/4191_1664708698323/bin/typescript-language-server", args = ["--stdio"] }
+language-server = { command = "typescript-language-server", args = ["--stdio"] }
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "jsx"
-language-server = { command = "/Users/gerardomunguia/Library/Caches/fnm_multishells/4191_1664708698323/bin/typescript-language-server", args = ["--stdio"] }
+language-server = { command = "typescript-language-server", args = ["--stdio"] }
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "tsx"
-language-server = { command = "/Users/gerardomunguia/Library/Caches/fnm_multishells/4191_1664708698323/bin/typescript-language-server", args = ["--stdio"] }
+language-server = { command = "typescript-language-server", args = ["--stdio"] }
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "css"
-language-server = { command = "/Users/gerardomunguia/Library/Caches/fnm_multishells/5182_1664735054272/bin/vscode-css-language-server", args = ["--stdio"] }
+language-server = { command = "vscode-css-language-server", args = ["--stdio"] }
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "css"] }
 
 [[language]]
 name = "html"
-language-server = { command = "/Users/gerardomunguia/Library/Caches/fnm_multishells/5202_1664735124636/bin/vscode-html-language-server", args = ["--stdio"] }
+language-server = { command = "vscode-html-language-server", args = ["--stdio"] }
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "html"] }
 
 [[language]]
 name = "json"
-language-server = { command = "/Users/gerardomunguia/Library/Caches/fnm_multishells/5228_1664735219494/bin/vscode-json-language-server", args = ["--stdio"] }
+language-server = { command = "vscode-json-language-server", args = ["--stdio"] }
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "json"] }
 
 [[language]]
 name = "yaml"
-language-server = { command = "/Users/gerardomunguia/Library/Caches/fnm_multishells/5306_1664735402169/bin/yaml-language-server", args = ["--stdio"] }
+language-server = { command = "yaml-language-server", args = ["--stdio"] }
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "yaml"] }
 
 [[language]]
