@@ -3,42 +3,42 @@ tap "homebrew/cask"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
-brew "aws-vault"
-brew "awscli"
-brew "bat"
-brew "docker-compose"
-brew "dust"
-brew "exa"
-brew "fd"
-brew "fish"
-brew "fnm"
-brew "fzf"
-brew "git"
-brew "git-delta"
-brew "helix"
-brew "libfido2"
-brew "tree-sitter"
-brew "mas"
-brew "neovim"
-brew "openssh"
-brew "procs"
-brew "python@3.9"
-brew "ripgrep"
-brew "starship"
-brew "terraform"
-brew "tig"
-brew "tmux"
-cask "alacritty"
-cask "docker"
-cask "font-fira-code-nerd-font"
-cask "gimp"
-cask "google-chrome"
-cask "insomnia"
-cask "karabiner-elements"
-cask "keeweb"
-cask "megasync"
-cask "shortcat"
-cask "shortcuts"
-cask "vlc"
-cask "zoom"
+brew "aws-vault", args: { no_quarantine: true }
+brew "awscli", args: { no_quarantine: true }
+brew "bat", args: { no_quarantine: true }
+brew "docker-compose", args: { no_quarantine: true }
+brew "dust", args: { no_quarantine: true }
+brew "exa", args: { no_quarantine: true }
+brew "fd", args: { no_quarantine: true }
+brew "fish", args: { no_quarantine: true }
+brew "fnm", args: { no_quarantine: true }
+brew "fzf", args: { no_quarantine: true }
+brew "git", args: { no_quarantine: true }
+brew "git-delta", args: { no_quarantine: true }
+brew "helix", args: { no_quarantine: true }
+brew "libfido2", args: { no_quarantine: true }
+brew "tree-sitter", args: { no_quarantine: true }
+brew "mas", args: { no_quarantine: true }
+brew "neovim", args: { no_quarantine: true }
+brew "openssh", args: { no_quarantine: true }
+brew "procs", args: { no_quarantine: true }
+brew "python@3.9", args: { no_quarantine: true }
+brew "ripgrep", args: { no_quarantine: true }
+brew "starship", args: { no_quarantine: true }
+brew "terraform", args: { no_quarantine: true }
+brew "tig", args: { no_quarantine: true }
+brew "tmux", args: { no_quarantine: true }
+cask "alacritty", args: { no_quarantine: true }
+cask "docker", args: { no_quarantine: true }
+cask "font-fira-code-nerd-font", args: { no_quarantine: true }
+cask "gimp", args: { no_quarantine: true }
+cask "google-chrome", args: { no_quarantine: true }
+cask "insomnia", args: { no_quarantine: true }
+cask "karabiner-elements", args: { no_quarantine: true }
+cask "keeweb", args: { no_quarantine: true }
+cask "megasync", args: { no_quarantine: true }
+cask "shortcat", args: { no_quarantine: true }
+cask "shortcuts", args: { no_quarantine: true }
+cask "vlc", args: { no_quarantine: true }
+cask "zoom", args: { no_quarantine: true }
 mas "Brother iPrint&Scan", id: 1193539993
