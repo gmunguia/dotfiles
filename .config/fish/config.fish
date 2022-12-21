@@ -10,6 +10,8 @@ export EDITOR=hx
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS='--bind=ctrl-u:page-up,ctrl-d:page-down'
 
+export HOMEBREW_BUNDLE_FILE=~/.config/brewfile/Brewfile
+
 function fzf_reverse_isearch
   history merge
   set removeTimestampPattern 's/^[0-9-]\{10\} # //'
