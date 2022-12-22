@@ -120,4 +120,5 @@ npm i -g \
 	typescript-language-server \
 	typescript \
 	vscode-langservers-extracted \
-	yaml-language-server
+	yaml-language-server \
+	@prisma/language-server
