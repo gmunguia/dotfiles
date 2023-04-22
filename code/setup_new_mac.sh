@@ -122,3 +122,7 @@ npm i -g \
 	vscode-langservers-extracted \
 	yaml-language-server \
 	@prisma/language-server
+
+# Setup keybase CLI. See https://github.com/keybase/client/issues/3627.
+ln -sf (brew info --cask keybase | grep (brew --prefix) | cut -d' ' -f1)'/Keybase.app/Contents/SharedSupport/bin/keybase' (brew --pre
+fix)'/bin/keybase'

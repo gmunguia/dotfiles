@@ -61,6 +61,9 @@ if status is-interactive
 
   abbr week date +%V
 
+  # https://github.com/keybase/client/issues/6006.
+  abbr keybase 'keybase --standalone'
+
   # https://github.com/starship/starship#fish
   starship init fish | source
 

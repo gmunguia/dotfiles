@@ -16,6 +16,7 @@ brew "fzf", args: { no_quarantine: true }
 brew "git", args: { no_quarantine: true }
 brew "git-delta", args: { no_quarantine: true }
 brew "helix", args: { no_quarantine: true }
+brew "keybase", args: { no_quarantine: true }
 brew "libfido2", args: { no_quarantine: true }
 brew "tree-sitter", args: { no_quarantine: true }
 brew "mas", args: { no_quarantine: true }
