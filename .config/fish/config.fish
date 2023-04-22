@@ -90,4 +90,10 @@ if status is-interactive
 
     echo $title
   end
+
+  alias gb='__git_fzf_git_branch'
+  alias gl='__git_fzf_git_log'
+  alias gr='__git_fzf_git_remote'
+  alias gs='__git_fzf_git_status'
+  alias gt='__git_fzf_git_tag'
 end
