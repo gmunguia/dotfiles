@@ -7,6 +7,10 @@ shell = ["fish", "-c"]
 color-modes = true
 idle-timeout = 0
 auto-format = false
+auto-pairs = false
+
+[editor.soft-wrap]
+enable = true
 
 [editor.file-picker]
 hidden = false
@@ -18,6 +22,7 @@ newline = "none"
 
 [editor.indent-guides]
 render = true
+skip-levels = 1
 
 [keys.normal]
 "backspace" = "remove_primary_selection"
@@ -29,7 +34,7 @@ render = true
   "search_selection",
   "extend_search_next",
 ]
-"space" = { "c" = "toggle_comments", "F" = ":format" }
+"space" = { "c" = "toggle_comments", "F" = ":format", "S" = ":pipe sort" }
 "[" = { "e" = "goto_prev_diag" }
 "]" = { "e" = "goto_next_diag" }
 "C" = [
@@ -37,12 +42,14 @@ render = true
   "select_mode",
   "goto_line_end",
   "change_selection",
+  "normal_mode",
 ]
 "D" = [
   "collapse_selection",
   "select_mode",
   "goto_line_end",
   "delete_selection",
+  "normal_mode",
 ]
 "C-j" = "copy_selection_on_next_line"
 "C-k" = "copy_selection_on_prev_line"
@@ -52,15 +59,17 @@ g = { l = ["select_mode", "goto_line_end", "normal_mode"], h = ["select_mode", "
   "move_prev_word_start",
   "move_next_word_end",
   "search_selection",
-  "search_next"
+  "make_search_word_bounded",
+  "search_next",
 ]
 "#" = [
   "move_char_right",
   "move_prev_word_start",
   "move_next_word_end",
   "search_selection",
-  "search_prev"
+  "search_prev",
 ]
+m = { m = ["collapse_selection", "select_mode", "match_brackets", "normal_mode"] }
 
 [keys.select]
 "backspace" = "remove_primary_selection"
@@ -71,6 +80,6 @@ g = { l = ["select_mode", "goto_line_end", "normal_mode"], h = ["select_mode", "
   "search_selection",
   "extend_search_next",
 ]
-"space" = { "c" = "toggle_comments", "F" = ":format" }
+"space" = { "c" = "toggle_comments", "F" = ":format", "S" = ":pipe sort" }
 "[" = { "e" = "goto_prev_diag" }
 "]" = { "e" = "goto_next_diag" }
