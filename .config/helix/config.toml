@@ -71,6 +71,10 @@ g = { l = ["select_mode", "goto_line_end", "normal_mode"], h = ["select_mode", "
 ]
 m = { m = ["collapse_selection", "select_mode", "match_brackets", "normal_mode"] }
 
+# See https://github.com/helix-editor/helix/issues/6771#issuecomment-1510205855
+j = "move_line_down"
+k = "move_line_up"
+
 [keys.select]
 "backspace" = "remove_primary_selection"
 "ret" = "keep_primary_selection"
@@ -83,3 +87,7 @@ m = { m = ["collapse_selection", "select_mode", "match_brackets", "normal_mode"]
 "space" = { "c" = "toggle_comments", "F" = ":format", "S" = ":pipe sort" }
 "[" = { "e" = "goto_prev_diag" }
 "]" = { "e" = "goto_next_diag" }
+
+# See https://github.com/helix-editor/helix/issues/6771#issuecomment-1510205855
+j = "move_line_down"
+k = "move_line_up"
