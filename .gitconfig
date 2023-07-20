@@ -18,20 +18,22 @@
   co = checkout
   cp = cherry-pick
   fa = ! git fetch --all -p
-  fu = ! git fetch upstream -p
+  fu = ! git fetch $(git upstream) -p
   k = log --graph --all --pretty=format:'%C(auto)%h %C("#"7c80b6)%as%C(auto)%d %s'
   nuke = ! git branch | grep -v $(git main) | xargs git branch -D && git gc
-  bomb = ! git branch -d $(git branch --merged="upstream/$(git main)" | grep -v "$(git main)")
-  rum = ! git rebase "upstream/$(git main)"
+  bomb = ! git branch -d $(git branch --merged="$(git upstream)/$(git main)" | grep -v "$(git main)")
+  rum = ! git rebase "$(git upstream)/$(git main)"
   cane = commit --amend --no-edit
   pff = ! git branch | grep \\* | sed 's/\\* //' | xargs git push --force-with-lease origin
   crepe = ! git branch | grep \\* | sed 's/\\* //' | xargs git push -u origin
-  wip = commit -m'wip' --no-verify
-  fit = ! git switch -c "$1" "upstream/$(git main)" "#" # The last "#" prevents bash from handling the extra parameters.
-  main = ! git rev-parse --verify upstream/master > /dev/null 2>&1 && echo "master" || echo "main"
-
-  # Interactively select commits to push to a new branch.
-  stack = ! git switch -c "$1" && git rebase -i "upstream/$(git main)" && git push --force-with-lease origin HEAD:"$1" && git switch - && git branch -D "$1" "#" # The last "#" prevents bash from handling the extra parameters.
+  wip = commit -m"wip" --no-verify
+  fit = ! git switch -c "$1" "$(git upstream)/$(git main)" "#" # The last "#" prevents bash from handling the extra parameters.
+  upstream = ! git remote | grep upstream >/dev/null 2>&1 && echo "upstream" || echo "origin"
+  main = ! git rev-parse --verify "$(git upstream)/master" >/dev/null 2>&1 && echo "master" || echo "main"
+  stack = ! trap \"git switch - && git branch -D $1\" EXIT";" \
+            git switch -c "$1" && \
+            git rebase --no-verify -i "origin/$(git main)" && \
+            git push --force-with-lease --no-verify origin HEAD:"$1" "#" # The last "#" prevents bash from handling the extra parameters.
 
 [gui]
   gcwarning = false
