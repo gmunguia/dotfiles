@@ -42,7 +42,7 @@ skip-levels = 1
   "select_mode",
   "goto_line_end",
   "change_selection",
-  "normal_mode",
+  "insert_mode",
 ]
 "D" = [
   "collapse_selection",
