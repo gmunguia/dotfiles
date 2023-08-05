@@ -52,7 +52,7 @@ if status is-interactive
   alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
   # sed on all files at once
-  abbr findreplace "fd '.*' -t f --print0 | xargs -0 sed -i '' -E"
+  abbr findreplace "fd '.*' -t f --print0 | xargs -0 sed -i -E 's/"
 
   # fuzzy-find a folder and cd into it
   abbr j "cd (fd '.*' -t d --exclude Caches | fzf)"
