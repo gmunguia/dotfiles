@@ -4,3 +4,4 @@ node_modules
 .tern-port
 .DS_Store
 .cfg
+.aider*
