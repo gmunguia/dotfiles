@@ -45,3 +45,7 @@ formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "gra
 [[language]]
 name = "markdown"
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "markdown"] }
+
+[[language]]
+name = "openscad"
+language-server = { command = "/Users/gerardomunguia/.cargo/bin/openscad-lsp", args = ["--stdio", "--fmt-style", "Mozilla"] }
