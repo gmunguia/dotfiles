@@ -68,7 +68,7 @@ shell:
   args:
     - -l
     - -c
-    - "tmux new -A -s alacritty"
+    - 'tmux new -A -s alacritty'
 
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
