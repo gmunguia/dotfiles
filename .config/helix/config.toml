@@ -34,7 +34,6 @@ skip-levels = 1
   "search_selection",
   "extend_search_next",
 ]
-"space" = { "c" = "toggle_comments", "F" = ":format", "S" = ":pipe sort" }
 "[" = { "e" = "goto_prev_diag" }
 "]" = { "e" = "goto_next_diag" }
 "C" = [
@@ -75,6 +74,14 @@ m = { m = ["collapse_selection", "select_mode", "match_brackets", "normal_mode"]
 j = "move_line_down"
 k = "move_line_up"
 
+[keys.normal.space]
+c = "toggle_comments"
+F = ":format"
+S = ":pipe sort"
+n = [
+  ":pipe sgpt --code --model gpt-3.5-turbo --temperature 0.3 --no-cache 'Using this code, fill the line having the comment FILL_THIS. Return the whole code, including previous and next lines and tabs as in the input.'",
+]
+
 [keys.select]
 "backspace" = "remove_primary_selection"
 "ret" = "keep_primary_selection"
@@ -89,5 +96,5 @@ k = "move_line_up"
 "]" = { "e" = "goto_next_diag" }
 
 # See https://github.com/helix-editor/helix/issues/6771#issuecomment-1510205855
-j = "move_line_down"
-k = "move_line_up"
+# j = "move_line_down"
+# k = "move_line_up"
