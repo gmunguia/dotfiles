@@ -1,41 +1,97 @@
+[language-server.typescript]
+command = "typescript-language-server"
+args = ["--stdio"]
+config.hostInfo = "helix"
+
+[language-server.eslint]
+args = ["--stdio"]
+command = "vscode-eslint-language-server"
+
+[language-server.eslint.config]
+nodePath = ""
+onIgnoredFiles = "off"
+packageManager = "pnpm"
+quiet = false
+rulesCustomizations = []
+run = "onType"
+useESLintClass = false
+validate = "on"
+codeAction = { disableRuleComment = { enable = true, location = "separateLine" }, showDocumentation = { enable = true } }
+codeActionOnSave = { mode = "all" }
+experimental = { }
+problems = { shortenToSingleLine = false }
+workingDirectory = { mode = "auto" }
+
+[language-server.css]
+args = ["--stdio"]
+command = "vscode-css-language-server"
+
+[language-server.html]
+args = ["--stdio"]
+command = "vscode-html-language-server"
+
+[language-server.json]
+args = ["--stdio"]
+command = "vscode-json-language-server"
+
+[language-server.yaml]
+args = ["--stdio"]
+command = "yaml-language-server"
+
+[language-server.openscad]
+args = ["--stdio", "--fmt-style", "Mozilla"]
+command = "/Users/gerardomunguia/.cargo/bin/openscad-lsp"
+
 [[language]]
 name = "typescript"
-language-server = { command = "typescript-language-server", args = ["--stdio"] }
+language-servers = [
+  "typescript",
+  { name = "eslint", except-features = [ "format" ] }
+]
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "javascript"
-language-server = { command = "typescript-language-server", args = ["--stdio"] }
+language-servers = [
+  "typescript",
+  { name = "eslint" , except-features = [ "format" ] }
+]
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "jsx"
-language-server = { command = "typescript-language-server", args = ["--stdio"] }
+language-servers = [
+  "typescript",
+  { name = "eslint" , except-features = [ "format" ] }
+]
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "tsx"
-language-server = { command = "typescript-language-server", args = ["--stdio"] }
+language-servers = [
+  "typescript",
+  { name = "eslint" , except-features = [ "format" ] }
+]
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "css"
-language-server = { command = "vscode-css-language-server", args = ["--stdio"] }
+language-servers = ["css"]
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "css"] }
 
 [[language]]
 name = "html"
-language-server = { command = "vscode-html-language-server", args = ["--stdio"] }
+language-servers = ["html"]
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "html"] }
 
 [[language]]
 name = "json"
-language-server = { command = "vscode-json-language-server", args = ["--stdio"] }
+language-servers = ["json"]
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "json"] }
 
 [[language]]
 name = "yaml"
-language-server = { command = "yaml-language-server", args = ["--stdio"] }
+language-servers = ["yaml"]
 formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "yaml"] }
 
 [[language]]
@@ -48,4 +104,4 @@ formatter = { command = "./node_modules/.bin/prettier", args = ["--parser", "mar
 
 [[language]]
 name = "openscad"
-language-server = { command = "/Users/gerardomunguia/.cargo/bin/openscad-lsp", args = ["--stdio", "--fmt-style", "Mozilla"] }
+language-servers = ["openscad"]
