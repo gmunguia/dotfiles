@@ -75,7 +75,7 @@ mouse_bindings:
   - { mouse: Right, action: PasteSelection }
 
 key_bindings:
-  # \x1e is Ctrl-^, the tmux prefix configured in `tmux.conf`.
+  # \x1e is Ctrl-^, the tmux prefix configured in `tmux.conf`. See https://en.wikipedia.org/wiki/C0_and_C1_control_codes.
   - { key: T, mods: Control, chars: "\x1ec" }
   - { key: Tab, mods: Shift|Control, chars: "\x1ep" }
   - { key: Tab, mods: Control, chars: "\x1en" }
@@ -89,3 +89,4 @@ key_bindings:
   - { key: Key8, mods: Command, chars: "\x1e8" }
   - { key: Key9, mods: Command, chars: "\x1e0" }
   - { key: B, mods: Control, chars: "\x1eb" }
+  - { key: L, mods: Control, chars: "\x1el" }
