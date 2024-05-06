@@ -8,7 +8,7 @@ args = ["--stdio"]
 command = "vscode-eslint-language-server"
 
 [language-server.eslint.config]
-nodePath = ""
+nodePath = "node"
 onIgnoredFiles = "off"
 packageManager = "pnpm"
 quiet = false
