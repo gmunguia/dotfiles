@@ -10,7 +10,26 @@ config remote set-url --push origin git@github.com:gmunguia/dotfiles.git
 
 # Install homebrew.
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+export PATH="/opt/homebrew/bin:$PATH"
 brew bundle
+
+# Set up fish.
+sudo sh -c "echo $(which fish) >> /etc/shells"
+# TODO this doesn't work if current user isn't root. in that case, remove sudo
+sudo chsh -s $(which fish)
+fish -c 'fish_add_path /opt/homebrew/bin'
+
+# Set up NodeJS.
+fnm install --lts
+
+# Language servers
+npm i -g \
+	dockerfile-language-server-nodejs \
+	typescript-language-server \
+	typescript \
+	vscode-langservers-extracted \
+	yaml-language-server \
+	@prisma/language-server
 
 # Close any open System Preferences panes, to prevent them from overriding settings we're about to change.
 osascript -e 'tell application "System Preferences" to quit'
@@ -101,28 +120,3 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 "<dic
 
 # Apply shortcut changes.
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
-
-# Set up fish.
-sudo sh -c "echo $(which fish) >> /etc/shells"
-sudo chsh -s $(which fish)
-fish
-fish_add_path /opt/homebrew/bin
-# Lunarvim is installed in ~/.local/bin .
-fish_add_path ~/.local/bin
-
-# Set up NodeJS.
-fnm install --lts
-npm i -g yarn
-
-# Language servers
-npm i -g \
-	dockerfile-language-server-nodejs \
-	typescript-language-server \
-	typescript \
-	vscode-langservers-extracted \
-	yaml-language-server \
-	@prisma/language-server
-
-# Setup keybase CLI. See https://github.com/keybase/client/issues/3627.
-ln -sf (brew info --cask keybase | grep (brew --prefix) | cut -d' ' -f1)'/Keybase.app/Contents/SharedSupport/bin/keybase' (brew --pre
-fix)'/bin/keybase'
