@@ -1,4 +1,5 @@
 # Does this command wait for install to finish before exit?
+# TODO Needs to be run before manually.
 xcode-select --install
 
 # https://www.atlassian.com/git/tutorials/dotfiles
