@@ -1,5 +1,5 @@
 # Does this command wait for install to finish before exit?
-# TODO Needs to be run before manually.
+# TODO Needs to be run before manually, because it's interactive
 xcode-select --install
 
 # https://www.atlassian.com/git/tutorials/dotfiles
@@ -16,8 +16,7 @@ brew bundle
 
 # Set up fish.
 sudo sh -c "echo $(which fish) >> /etc/shells"
-# TODO this doesn't work if current user isn't root. in that case, remove sudo
-sudo chsh -s $(which fish)
+sudo chsh -s $(which fish) $USER
 fish -c 'fish_add_path /opt/homebrew/bin'
 
 # Set up NodeJS.
