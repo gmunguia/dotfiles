@@ -1,31 +1,20 @@
 tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
-tap "homebrew/core"
-brew "aws-vault", args: { no_quarantine: true }
-brew "awscli", args: { no_quarantine: true }
 brew "bat", args: { no_quarantine: true }
+brew "coreutils", args: { no_quarantine: true }
+brew "direnv", args: { no_quarantine: true }
 brew "docker-compose", args: { no_quarantine: true }
-brew "dust", args: { no_quarantine: true }
-brew "exa", args: { no_quarantine: true }
-brew "fd", args: { no_quarantine: true }
 brew "fish", args: { no_quarantine: true }
 brew "fnm", args: { no_quarantine: true }
 brew "fzf", args: { no_quarantine: true }
-brew "git", args: { no_quarantine: true }
 brew "git-delta", args: { no_quarantine: true }
 brew "helix", args: { no_quarantine: true }
-brew "libfido2", args: { no_quarantine: true }
-brew "tree-sitter", args: { no_quarantine: true }
 brew "mas", args: { no_quarantine: true }
 brew "openssh", args: { no_quarantine: true }
-brew "procs", args: { no_quarantine: true }
-brew "python@3.9", args: { no_quarantine: true }
 brew "ripgrep", args: { no_quarantine: true }
 brew "starship", args: { no_quarantine: true }
-brew "tig", args: { no_quarantine: true }
 brew "tmux", args: { no_quarantine: true }
+brew "ykman", args: { no_quarantine: true }
 cask "alacritty", args: { no_quarantine: true }
 cask "bruno", args: { no_quarantine: true }
 cask "docker", args: { no_quarantine: true }
@@ -36,5 +25,4 @@ cask "keeweb", args: { no_quarantine: true }
 cask "megasync", args: { no_quarantine: true }
 cask "raycast", args: { no_quarantine: true }
 cask "shortcat", args: { no_quarantine: true }
-cask "vlc", args: { no_quarantine: true }
 mas "Brother iPrint&Scan", id: 1193539993

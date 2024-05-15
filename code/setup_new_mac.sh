@@ -1,17 +1,22 @@
+#!/bin/bash
+set -e
+
 # Does this command wait for install to finish before exit?
 # TODO Needs to be run before manually, because it's interactive
-xcode-select --install
+# xcode-select --install
 
 # https://www.atlassian.com/git/tutorials/dotfiles
 git clone --bare --recurse-submodules gmunguia/dotfiles $HOME/.cfg
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 config checkout
 config config --local status.showUntrackedFiles no
+config submodule update --init --recursive
 config remote set-url --push origin git@github.com:gmunguia/dotfiles.git
 
 # Install homebrew.
 NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 export PATH="/opt/homebrew/bin:$PATH"
+export HOMEBREW_BUNDLE_FILE="$HOME/.config/brewfile/Brewfile"
 brew bundle
 
 # Set up fish.
@@ -21,6 +26,9 @@ fish -c 'fish_add_path /opt/homebrew/bin'
 
 # Set up NodeJS.
 fnm install --lts
+
+# Set up keeweb+yubikey
+ln -s $(which ykman) /usr/local/bin/ykman
 
 # Language servers
 npm i -g \
@@ -48,10 +56,11 @@ defaults write com.apple.dock no-bouncing -bool true
 defaults write com.apple.dock autohide -bool true
 killall Dock
 
+# I use raycast instead of spotlight. Idk if this is the right way of disabling it.
 defaults write com.apple.spotlight orderedItems -array \
-	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
-	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
+	'{"enabled" = 0;"name" = "APPLICATIONS";}' \
+	'{"enabled" = 0;"name" = "SYSTEM_PREFS";}' \
+	'{"enabled" = 0;"name" = "DIRECTORIES";}' \
 	'{"enabled" = 0;"name" = "PDF";}' \
 	'{"enabled" = 0;"name" = "FONTS";}' \
 	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
@@ -114,9 +123,17 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 # Refresh settings.
 killall Finder
 
+# How to find correct values for defaults:
+# 1. run `defaults read > before`
+# 2. change setting
+# 3. run `defaults read > after`
+# 4. diff the two files to find out what's changed.
+
 # Remove input source change shortcut.
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 60 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>32</integer><integer>49</integer><integer>262144</integer></array><key>type</key><string>standard</string></dict></dict>"
 defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 61 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>32</integer><integer>49</integer><integer>786432</integer></array><key>type</key><string>standard</string></dict></dict>"
+# Remove cmd+space spotlight shortcut.
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 64 "<dict><key>enabled</key><false/><key>value</key><dict><key>parameters</key><array><integer>32</integer><integer>49</integer><integer>1048576</integer></array><key>type</key><string>standard</string></dict></dict>"
 
 # Apply shortcut changes.
 /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
